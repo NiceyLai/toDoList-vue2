@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+13-todolist
 
 # local env files
 .env.local

@@ -1,17 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <header>
+      <section>
+        <label>ToDoList</label>
+        <input placeholder="添加ToDo"/>
+      </section>
+    </header>
+    <section>
+      <h2>正在进行 <span id="todocount"></span></h2>
+      <ol id="todolist" class="demo-box"></ol>
+      <h2>已经完成 <span id="donecount"></span></h2>
+      <ul id="donelist"></ul>
+    </section>
+    <footer>Copyright &copy; 2014 todolist.cn</footer>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator";
 
 @Component({
   components: {
-    HelloWorld,
   },
 })
 export default class HomeView extends Vue {}
