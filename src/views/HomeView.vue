@@ -1,16 +1,9 @@
 <template>
   <div class="home">
-    <header>
-      <section>
-        <label>ToDoList</label>
-        <input placeholder="添加ToDo"/>
-      </section>
-    </header>
+    <Nav></Nav>
     <section>
-      <h2>正在进行 <span id="todocount"></span></h2>
-      <ol id="todolist" class="demo-box"></ol>
-      <h2>已经完成 <span id="donecount"></span></h2>
-      <ul id="donelist"></ul>
+      <Now></Now>
+      <Finish></Finish>
     </section>
     <footer>Copyright &copy; 2014 todolist.cn</footer>
   </div>
@@ -18,10 +11,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Nav from "../components/Nav.vue";
+import Now from "../components/Now.vue";
+import Finish from "../components/Finish.vue";
 
 @Component({
-  components: {
-  },
+  components: { Nav, Now, Finish },
 })
 export default class HomeView extends Vue {}
 </script>
