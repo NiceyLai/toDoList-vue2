@@ -1,17 +1,42 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
     <h2>正在进行 <span id="todocount">22</span></h2>
-    <ol id="todolist" class="demo-box"></ol>
+    <ol v-for="item in todoList" :key="item.id">
+      <li>
+        <input type="checkbox" checked="checked" />
+        <p>{{ item.text }}</p>
+        <a href="javascript:;" id=" + i + "></a>
+      </li>
+    </ol>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component({
-  components: {},
-})
-export default class Now extends Vue {}
+<script>
+export default {
+  data() {
+    return {
+      val: "",
+      todoList: [
+        {
+          id: "1",
+          isCheck: false,
+          text: "test",
+        },
+        {
+          id: "2",
+          isCheck: false,
+          text: "test",
+        },
+        {
+          id: "3",
+          isCheck: false,
+          text: "test",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
