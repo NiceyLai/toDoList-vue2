@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <div>
+    <section>
       <label>ToDoList</label>
       <input placeholder="添加ToDo" />
-    </div>
+    </section>
   </nav>
 </template>
 
@@ -23,7 +23,7 @@ export default class Nav extends Vue {}
 nav {
   height: 70px;
   background: $color-background;
-  div {
+  section {
     margin: 0 auto;
     label {
       float: left;
@@ -45,20 +45,6 @@ nav {
         0 1px 6px rgba(0, 0, 0, 0.45) inset;
       border: none;
     }
-  }
-}
-
-@media screen and (max-device-width: 620px) {
-  div {
-    width: 96%;
-    padding: 0 2%;
-  }
-}
-
-@media screen and (min-width: 620px) {
-  div {
-    width: 600px;
-    padding: 0 10px;
   }
 }
 </style>
