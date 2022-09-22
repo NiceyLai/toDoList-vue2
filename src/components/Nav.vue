@@ -30,7 +30,7 @@ export default {
     },
 
     getDate() {
-      // this.toDoList = localStorage.getItem("todolist");
+      this.toDoList = localStorage.getItem("todolist");
       if (this.toDoList !== null) {
         // 本地存储里面的数据是字符串格式的 但是我们需要的是对象格式的
         return JSON.parse(this.toDoList);
