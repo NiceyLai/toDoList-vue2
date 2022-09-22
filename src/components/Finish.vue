@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>已经完成 <span id="donecount"></span></h2>
+    <h2>已经完成 <span id="donecount">43</span></h2>
     <ul id="donelist"></ul>
   </div>
 </template>
@@ -15,6 +15,8 @@ export default class Finish extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/style/helper.scss";
+@import "@/assets/style/reset.scss";
 div {
   border: 1px solid blue;
 }

@@ -22,6 +22,8 @@ export default class HomeView extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/style/helper.scss";
+@import "@/assets/style/reset.scss";
 section {
   margin: 0 auto;
 }

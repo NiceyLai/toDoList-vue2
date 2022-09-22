@@ -23,3 +23,17 @@ input {
 :focus {
     outline: none;
 }
+span {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    display: inline-block;
+    padding: 0 5px;
+    height: 20px;
+    border-radius: 20px;
+    background: #E6E6FA;
+    line-height: 22px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
