@@ -15,21 +15,15 @@ export default {
       val: "",
     };
   },
-  created() {
-    let getList = JSON.parse(window.localStorage.getItem("listTodo"));
-    this.todoList = getList;
-  },
+
   methods: {
     inputContent(event) {
       if (event.keyCode === 13) {
         if (this.val === "") {
           alert("请输入您要的操作");
         } else {
-          // 先读取本地存储原来的数据
           const local = this.getDate();
-          // 把local数组进行更新数据 把最新的数据追加给local数组
           local.push({ title: this.val, done: false });
-          // 把这个数组local 存储给本地存储
           this.saveDate();
           console.log(local);
         }
@@ -39,7 +33,6 @@ export default {
     getDate() {
       this.todoList = localStorage.getItem("listTodo");
       if (this.todoList !== null) {
-        // 本地存储里面的数据是字符串格式的 但是我们需要的是对象格式的
         return JSON.parse(this.todoList);
       } else {
         return [];
