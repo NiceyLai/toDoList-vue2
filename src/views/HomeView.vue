@@ -18,14 +18,9 @@ import Finish from "../components/Finish.vue";
 @Component({
   components: { Nav, Now, Finish },
 })
-export default class HomeView extends Vue {
-}
+export default class HomeView extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/style/helper.scss";
 @import "@/assets/style/reset.scss";
-
-
-
 </style>

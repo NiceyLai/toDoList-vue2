@@ -1,19 +1,45 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <nav>
     <section>
       <label>ToDoList</label>
-      <input placeholder="添加ToDo" />
+      <input v-model="val" @keydown="inputContent" placeholder="添加ToDo" />
     </section>
   </nav>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+<script>
+export default {
+  data() {
+    return {
+      val: "",
+      toDoList: [],
+    };
+  },
+  methods: {
+    inputContent(event) {
+      if (event.keyCode === 13) {
+        console.log(1);
+        if (this.val === "") {
+          alert("请输入您要的操作");
+        } else {
+          // 先读取本地存储原来的数据
+          console.log(2);
+        }
+      }
+    },
 
-@Component({
-  components: {},
-})
-export default class Nav extends Vue {}
+    getDate() {
+      // this.toDoList = localStorage.getItem("todolist");
+      if (this.toDoList !== null) {
+        // 本地存储里面的数据是字符串格式的 但是我们需要的是对象格式的
+        return JSON.parse(this.toDoList);
+      } else {
+        return [];
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
