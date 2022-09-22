@@ -20,3 +20,23 @@ import Finish from "../components/Finish.vue";
 })
 export default class HomeView extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+section {
+  margin: 0 auto;
+}
+
+@media screen and (max-device-width: 620px) {
+  section {
+    width: 96%;
+    padding: 0 2%;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  section {
+    width: 600px;
+    padding: 0 10px;
+  }
+}
+</style>

@@ -9,7 +9,10 @@
 @import "@/assets/style/reset.scss";
 
 body {
-  background: #f5f5f5; 
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: #f5f5f5;
 }
 
 #app {
@@ -17,7 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  // color: #2c3e50;
   font-size: 16px;
   line-height: 1.5;
 }
