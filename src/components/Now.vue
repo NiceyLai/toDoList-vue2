@@ -5,8 +5,8 @@
     <ol v-for="item in todoList" :key="item.id">
       <li>
         <input type="checkbox" checked="checked" />
-        <p>{{ item.text }}</p>
-        <a href="javascript:;" id=" + i + "></a>
+        <p>{{ item.title }}</p>
+        <a href="javascript:;"></a>
       </li>
     </ol>
   </div>
@@ -20,18 +20,18 @@ export default {
       todoList: [
         {
           id: "1",
-          isCheck: false,
-          text: "test",
+          title: "1111",
+          done: false,
         },
         {
           id: "2",
-          isCheck: false,
-          text: "test",
+          title: "2222",
+          done: false,
         },
         {
           id: "3",
-          isCheck: false,
-          text: "test",
+          title: "33333",
+          done: false,
         },
       ],
     };
