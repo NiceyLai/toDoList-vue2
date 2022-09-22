@@ -1,23 +1,42 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
     <h2>已经完成 <span id="donecount">43</span></h2>
     <ul id="donelist">
-      <li>
-        <input type="checkbox" />
-        <p>" + n.title + "</p>
-        <a href="javascript:;" id=" + i + "></a>
+      <li v-for="item in todoList" :key="item.id">
+        <input type="checkbox" :checked="item.done" @change="select(item)" />
+        <p>{{ item.title }}</p>
+        <a href="javascript:;"></a>
       </li>
     </ul>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+<script>
+export default {
+  data() {
+    return {
+      todoList: [],
+    };
+  },
 
-@Component({
-  components: {},
-})
-export default class Finish extends Vue {}
+  methods: {
+    update() {
+      this.todoList = this.$store.state.todoList.filter((item) => item.done);
+    },
+    select(item) {
+      this.$store.commit("noSelected", item);
+    },
+  },
+  watch: {
+    "$store.state.todoList": {
+      handler: function () {
+        this.update();
+      },
+      deep: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
