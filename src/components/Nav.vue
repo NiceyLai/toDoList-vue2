@@ -22,10 +22,13 @@ export default {
         if (this.val === "") {
           alert("请输入您要的操作");
         } else {
-          const local = this.getDate();
-          local.push({ title: this.val, done: false });
-          this.saveDate();
-          console.log(local);
+          const params = {
+            id: new Date().getTime(),
+            title: this.val,
+            done: false,
+          };
+          this.$store.commit("addList", params);
+          this.val = "";
         }
       }
     },
@@ -40,7 +43,7 @@ export default {
     },
 
     saveDate() {
-      window.localStorage.setItem("listTodo", JSON.stringify(this.todoList));
+      window.localStorage.setItem("listTodo", JSON.stringify(this.val));
     },
   },
 };

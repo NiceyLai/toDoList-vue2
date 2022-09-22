@@ -4,7 +4,7 @@
     <h2>正在进行 <span id="todocount">22</span></h2>
     <ol v-for="item in todoList" :key="item.id">
       <li>
-        <input type="checkbox" checked="checked" />
+        <input type="checkbox" :checked="item.done" />
         <p>{{ item.title }}</p>
         <a href="javascript:;"></a>
       </li>
@@ -16,29 +16,21 @@
 export default {
   data() {
     return {
-      val: "",
-      todoList: [
-        {
-          id: "1",
-          title: "1111",
-          done: false,
-        },
-        {
-          id: "2",
-          title: "2222",
-          done: false,
-        },
-        {
-          id: "3",
-          title: "33333",
-          done: false,
-        },
-      ],
+      todoList: [],
     };
   },
+
   methods: {
-    
-  }
+    update() {
+      this.todoList = this.$store.state.todoList;
+      console.log(this.todoList);
+    },
+  },
+  watch: {
+    "$store.state.todoList"() {
+      this.update();
+    },
+  },
 };
 </script>
 
