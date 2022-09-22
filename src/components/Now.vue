@@ -8,7 +8,7 @@
       <li>
         <input type="checkbox" :checked="item.done" @change="select(item)" />
         <p>{{ item.title }}</p>
-        <a href="javascript:;"></a>
+        <a href="javascript:;" @click="handle(item)"></a>
       </li>
     </ol>
   </div>
@@ -29,7 +29,10 @@ export default {
     select(item) {
       this.$store.commit("selected", item);
     },
-
+    handle(item) {
+      this.$store.commit("removeList", item);
+      console.log(32323);
+    },
   },
   watch: {
     "$store.state.todoList": {
