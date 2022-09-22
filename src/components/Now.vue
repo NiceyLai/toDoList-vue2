@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
-    <h2>正在进行 <span id="todocount">22</span></h2>
+    <h2>
+      正在进行 <span>{{ todoList.length }}</span>
+    </h2>
     <ol v-for="item in todoList" :key="item.id">
       <li>
         <input type="checkbox" :checked="item.done" @change="select(item)" />
@@ -27,6 +29,7 @@ export default {
     select(item) {
       this.$store.commit("selected", item);
     },
+
   },
   watch: {
     "$store.state.todoList": {

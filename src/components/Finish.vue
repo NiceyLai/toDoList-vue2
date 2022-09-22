@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
-    <h2>已经完成 <span id="donecount">43</span></h2>
+    <h2>
+      已经完成 <span>{{ todoList.length }}</span>
+    </h2>
     <ul id="donelist">
       <li v-for="item in todoList" :key="item.id">
         <input type="checkbox" :checked="item.done" @change="select(item)" />
