@@ -9,7 +9,7 @@
 @import "@/assets/style/reset.scss";
 
 body {
-  background: #f5f5f5;
+  background: #f5f5f5; 
 }
 
 #app {
