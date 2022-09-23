@@ -48,7 +48,5 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/style/helper.scss";
 @import "@/assets/style/reset.scss";
-div {
-  border: 1px solid blue;
-}
+
 </style>

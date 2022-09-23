@@ -49,7 +49,4 @@ export default {
 @import "@/assets/style/helper.scss";
 @import "@/assets/style/reset.scss";
 
-div {
-  border: 1px solid green;
-}
 </style>

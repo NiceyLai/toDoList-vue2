@@ -9,6 +9,13 @@ a {
     color: inherit;
 }
 
+:focus {
+    outline: none;
+}
+
+section {
+    margin: 0 auto;
+}
 ul,
 ol {
     padding: 0;
@@ -20,8 +27,9 @@ input {
     font: inherit;
 }
 
-:focus {
-    outline: none;
+h2 {
+    position: relative;
+    margin: 16px 0;
 }
 
 span {
@@ -37,29 +45,6 @@ span {
     text-align: center;
     color: #666;
     font-size: 14px;
-}
-
-
-section {
-    margin: 0 auto;
-}
-
-@media screen and (max-device-width: 620px) {
-    section {
-        width: 96%;
-        padding: 0 2%;
-    }
-}
-
-@media screen and (min-width: 620px) {
-    section {
-        width: 600px;
-        padding: 0 10px;
-    }
-}
-
-h2 {
-    position: relative;
 }
 
 ol,
@@ -99,7 +84,7 @@ li {
     margin-bottom: 10px;
     padding: 0 45px;
     border-radius: 3px;
-    border-left: 5px solid #629A9C;
+    border-left: 5px solid rgb(0 141 142);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
 }
 
@@ -114,14 +99,14 @@ ul li {
 
 li a {
     position: absolute;
-    top: 2px;
+    top: 6px;
     right: 5px;
     display: inline-block;
-    width: 14px;
-    height: 12px;
+    width: 22px;
+    height: 20px;
     border-radius: 14px;
-    border: 6px double rgb(177, 62, 62);
-    background: #CCC;
+    border: 6px double #FFF;
+    background: rgb(191 54 12);
     line-height: 14px;
     text-align: center;
     color: #FFF;
@@ -136,8 +121,16 @@ footer {
     text-align: center;
 }
 
-footer a {
-    color: #666;
-    text-decoration: none;
-    color: #999;
+@media screen and (max-device-width: 620px) {
+    section {
+        width: 96%;
+        padding: 0 2%;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    section {
+        width: 600px;
+        padding: 0 10px;
+    }
 }
