@@ -19,9 +19,10 @@ export default new Vuex.Store({
       state.todoList.find((item) => item.id === payload.id).done = false;
     },
     removeList(state, payload) {
-      console.log(payload);
-
-       const s= state.todoList.find((item) => item.id === payload.id);
+      if (item.id === payload.id) {
+        console.log(1111, payload.id);
+        state.todoList = state.todoList.splice(payload.id, 1);
+      }
     },
   },
 });

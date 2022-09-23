@@ -31,7 +31,6 @@ export default {
     },
     handle(item) {
       this.$store.commit("removeList", item);
-      console.log(32323);
     },
   },
   watch: {
