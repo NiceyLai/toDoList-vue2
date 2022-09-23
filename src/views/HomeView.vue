@@ -5,7 +5,7 @@
       <Now></Now>
       <Finish></Finish>
     </section>
-    <footer>Copyright &copy; 2014 todolist.cn</footer>
+    <footer>Copyright Nicey&copy; 2022 todolist.cn</footer>
   </div>
 </template>
 
@@ -18,7 +18,11 @@ import Finish from "../components/Finish.vue";
 @Component({
   components: { Nav, Now, Finish },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  created() {
+    this.$store.commit("getList");
+  }
+}
 </script>
 
 <style lang="scss" scoped>

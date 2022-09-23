@@ -33,18 +33,7 @@ export default {
       }
     },
 
-    getDate() {
-      this.todoList = localStorage.getItem("listTodo");
-      if (this.todoList !== null) {
-        return JSON.parse(this.todoList);
-      } else {
-        return [];
-      }
-    },
-
-    saveDate() {
-      window.localStorage.setItem("listTodo", JSON.stringify(this.val));
-    },
+   
   },
 };
 </script>
