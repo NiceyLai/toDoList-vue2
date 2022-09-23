@@ -1,39 +1,44 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-export default new Vuex.Store({
+type TodoItem = { id: number | string; title: string; done: boolean };
+const store = new Vuex.Store({
   state: {
-    todoList: [],
+    todoList: [] as TodoItem[],
   },
 
   mutations: {
     addList(state, payload) {
       state.todoList.unshift(payload);
-      this.commit("saveList");
+      store.commit("saveList");
     },
     selected(state, payload) {
-      state.todoList.find((item) => item.id === payload.id).done = true;
-      this.commit("saveList");
+      const targetItem = state.todoList.find((item) => item.id === payload.id);
+      if (targetItem) targetItem.done = true;
+      store.commit("saveList");
     },
     noSelected(state, payload) {
-      state.todoList.find((item) => item.id === payload.id).done = false;
-      this.commit("saveList");
+      const targetItem = state.todoList.find((item) => item.id === payload.id);
+      if (targetItem) targetItem.done = false;
+      store.commit("saveList");
     },
     removeList(state, payload) {
       const index = state.todoList.findIndex((item) => item?.id === payload.id);
       if (index >= 0) {
         state.todoList.splice(index, 1);
-        this.commit("saveList");
+        store.commit("saveList");
       }
     },
     getList(state) {
-      state.todoList = JSON.parse(localStorage.getItem("listTodo"));
-      if (state.todoList !== null) {
-        JSON.parse(state.todoList);
+      if (localStorage.getItem("listTodo")) {
+        console.log(44444);
+
+        state.todoList = JSON.parse(localStorage.getItem("listTodo")!);
+        console.log(55555);
       }
-      state.todoList = [];
+      console.log(33333);
     },
 
     saveList(state) {
@@ -41,3 +46,5 @@ export default new Vuex.Store({
     },
   },
 });
+
+export default store;

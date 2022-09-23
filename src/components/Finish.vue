@@ -8,7 +8,7 @@
       <li v-for="item in todoList" :key="item.id">
         <input type="checkbox" :checked="item.done" @change="select(item)" />
         <p>{{ item.title }}</p>
-        <a href="javascript:;"  @click="handle(item)"></a>
+        <a href="javascript:;" @click="handle(item)"></a>
       </li>
     </ul>
   </div>
@@ -29,7 +29,7 @@ export default {
     select(item) {
       this.$store.commit("noSelected", item);
     },
-     handle(item) {
+    handle(item) {
       this.$store.commit("removeList", item);
     },
   },
@@ -39,6 +39,7 @@ export default {
         this.update();
       },
       deep: true,
+      immediate: true,
     },
   },
 };

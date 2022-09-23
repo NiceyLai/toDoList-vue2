@@ -20,7 +20,11 @@ import Finish from "../components/Finish.vue";
 })
 export default class HomeView extends Vue {
   created() {
+    console.log(1111);
+    
     this.$store.commit("getList");
+    console.log(22222);
+    
   }
 }
 </script>

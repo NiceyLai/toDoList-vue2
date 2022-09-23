@@ -39,6 +39,7 @@ export default {
         this.update();
       },
       deep: true,
+      immediate: true,
     },
   },
 };
